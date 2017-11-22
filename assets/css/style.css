@@ -1,0 +1,83 @@
+body {
+    background-image: url("../images/crystalCave.jpg");
+}
+
+
+#heading {
+    height: 50px;
+    width: 250px;
+    background-color: #c87130;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    
+}
+h1 {
+    padding: 15px;
+    color: #ffffff;
+    font-size: 30px;
+
+}
+button {
+	padding: 20px;
+}
+ section {
+ 	padding: 20px;
+ 	display: inline-block;
+    width: 400px;
+    background-color: #fae6ce;
+    padding-bottom: 50px;
+    margin-left: 20px; 
+ }
+ aside {
+ 	padding: 20px;
+ }
+ .computerScoreBox {
+ 	
+    background-color: lightgreen;
+    height: 80px;
+    width: 175px;
+    margin-top: 10px;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    
+    font-size: 30px;
+ }
+.gameScoreBox {
+	position: relative;
+    left: 180px;
+    bottom: 30px;
+    width: 50px;
+    background-color: #ffffff;
+    height: 40px;
+}
+p {
+    font-size: 16px;
+}
+
+ img {
+ 	width: 75px;
+ 	height: 75px;
+ }
+.gemButtonsBox {
+    margin-left: 20px;
+}
+
+
+ .totalScoreBox {
+    background-color: #33a296;
+    width: 175px;
+    margin-left: 20px;
+    margin-top: 10px;
+ }
+ .playersScoreBox {
+    background-color: #33a296;
+    width: 175px;
+    height: 75px;
+    margin-left: 20px;
+    margin-top: 10px;
+    
+ }
+ .playersScore {
+    font-size: 30px;
+ }
