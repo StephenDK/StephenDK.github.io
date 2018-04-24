@@ -56,11 +56,31 @@
             <section id="portfolio-area">
               <h1 class="port-header">Portfolio</h1>
               <hr class="port-hr"/>
-              <img class="port-imgs" src="http://lorempixel.com/223/166" alt="">
-              <img class="port-imgs" src="http://lorempixel.com/233/166" alt="">
-              <img class="port-imgs" src="http://lorempixel.com/233/166" alt="">
-              <img class="port-imgs" src="http://lorempixel.com/233/166" alt="">
-              <img class="port-imgs" src="http://lorempixel.com/233/166" alt="">
+              <div class="project-container">
+                  <a href="https://blender-sdklein08.c9users.io/"><img class="port-imgs" src="./assets/imgs/blender.png" alt=""></a>
+                  <br>
+                  <button data-toggle="modal" data-target="#blender">Info</button>  
+                </div>
+              <div class="project-container">
+                <a href="https://radiant-fortress-94226.herokuapp.com/burgers"><img class="port-imgs" src="./assets/imgs/burger.png" alt=""></a>
+                <br>
+                <button data-toggle="modal" data-target="#eatdaburger">Info</button>  
+              </div>
+              <div class="project-container sendRight">  
+                <a href="https://glacial-dusk-17946.herokuapp.com/"><img class="port-imgs" src="./assets/imgs/clickygame.png" alt=""></a>
+                <br>
+                <button data-toggle="modal" data-target="#marioModal">Info</button>
+              </div>
+              <div class="project-container">
+                <a href="https://fierce-brushlands-69343.herokuapp.com/"><img class="port-imgs" src="./assets/imgs/friendfinder.png" alt=""></a>
+                <br>
+                <button data-toggle="modal" data-target="#friendFinder">Info</button>
+              </div>
+              <div class="project-container sendRight">
+                <a href="https://breadcrumb-s.github.io/"><img class="port-imgs" src="./assets/imgs/breadcrumbs.png" alt=""></a>
+                <br>
+                <button data-toggle="modal" data-target="#breadCrumbs">Info</button>
+              </div>
             </section>
           </div>
           <div class="col-md-5">
@@ -97,11 +117,105 @@
     </footer>
     <!-- End of footer -->
 
+    <!-- Modals -->
+    
+    <!-- Eat Da Burger -->
+    <div id="eatdaburger" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Eat-da-Burger</h4>
+          </div>
+          <div class="modal-body">
+            <p>Eat da burger is a project </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+    <!-- Mario Project -->
+    <div id="marioModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Mario Clicky Game</h4>
+          </div>
+          <div class="modal-body">
+            <p>The Mario clicky game is a memroy game where you try to get the highest possible score without
+              clicking the same character twice. This game was built using reacts components as well as setting and 
+            updating components state. </p>
+            <a href="https://github.com/StephenDK/React-Clicky-Game">https://github.com/StephenDK/React-Clicky-Game</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+    <!-- Bread Crumbs Project -->
+    <div id="breadCrumbs" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">BreadCrumbs </h4>
+            </div>
+            <div class="modal-body">
+              <p>BreadCrumbs is a hide and seek team project involing users who are geographically close to each other.
+                This application uses Google Firebase's authentication and Google map's API. Also using the Cloudinary API to
+              allow users to upload pitures as clues to their location. Built with HTML, CSS, JavaScript, AJAX, and Node.js.  </p>
+              <a href="https://github.com/TeamThunderBuddies/BreadCrumbs">https://github.com/TeamThunderBuddies/BreadCrumbs</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+      <!-- Blender -->
+      <div id="blender" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Eat-da-Burger</h4>
+              </div>
+              <div class="modal-body">
+                <p>Eat da burger is a project </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+    
+
     <!-- jQuery CDN -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
   </body>
 

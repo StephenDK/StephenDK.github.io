@@ -109,7 +109,7 @@ html {
 /* ----------------- */
 
 #connect-with-me-area {
-  width: 100%;
+  width: 80%;
 
   /* Box-model */
   padding: 30px 30px 43px;
@@ -268,7 +268,8 @@ html {
 
 #portfolio-area {
   /* Box-model */
-  width: 85%;
+  height: 845px;
+  width: 95%;
   padding: 45px 10px 25px 31px;
 
   /* Positioning */
@@ -282,15 +283,25 @@ html {
 .port-hr {
   margin-bottom: 40px;
 }
+.project-container {
+    display: inline-block;
+
+}
+.sendRight {
+    float: right;
+}
 
 .port-imgs {
   /* Box-model */
   width: 233px;
   height: 166px;
-  margin-right: 15px;
+  margin-right: 10px;
 
   /* Positioning */
   margin-bottom: 15px;
+}
+button {
+  margin-bottom: 10px;
 }
 
 /* --------END--------- */
