@@ -31,7 +31,7 @@
               <span class="icon-bar"></span>
             </button>
             <div class="col-xs-12 phone-nav">
-              <a class="navbar-brand" href="#" id="logo">Stephen Klein</a>
+              <a class="navbar-brand" href="index.html" id="logo">Stephen Klein</a>
             </div>
           </div>
 
@@ -59,27 +59,32 @@
               <div class="project-container">
                   <a href="https://blender-sdklein08.c9users.io/"><img class="port-imgs" src="./assets/imgs/blender.png" alt=""></a>
                   <br>
-                  <button data-toggle="modal" data-target="#blender">Info</button>  
+                  <button class="portfolio-button" data-toggle="modal" data-target="#blender">Info</button>  
                 </div>
-              <div class="project-container">
+              <div class="project-container sendRight">
                 <a href="https://radiant-fortress-94226.herokuapp.com/burgers"><img class="port-imgs" src="./assets/imgs/burger.png" alt=""></a>
                 <br>
-                <button data-toggle="modal" data-target="#eatdaburger">Info</button>  
+                <button class="portfolio-button" data-toggle="modal" data-target="#eatdaburger">Info</button>  
               </div>
               <div class="project-container sendRight">  
                 <a href="https://glacial-dusk-17946.herokuapp.com/"><img class="port-imgs" src="./assets/imgs/clickygame.png" alt=""></a>
                 <br>
-                <button data-toggle="modal" data-target="#marioModal">Info</button>
+                <button class="portfolio-button" data-toggle="modal" data-target="#marioModal">Info</button>
               </div>
               <div class="project-container">
                 <a href="https://fierce-brushlands-69343.herokuapp.com/"><img class="port-imgs" src="./assets/imgs/friendfinder.png" alt=""></a>
                 <br>
-                <button data-toggle="modal" data-target="#friendFinder">Info</button>
+                <button class="portfolio-button" data-toggle="modal" data-target="#friendFinder">Info</button>
+              </div>
+              <div class="project-container">
+                  <a href="https://pure-fortress-69110.herokuapp.com/"><img class="port-imgs" src="./assets/imgs/scraper.png" alt=""></a>
+                  <br>
+                  <button class="portfolio-button" data-toggle="modal" data-target="#scraper">Info</button>
               </div>
               <div class="project-container sendRight">
                 <a href="https://breadcrumb-s.github.io/"><img class="port-imgs" src="./assets/imgs/breadcrumbs.png" alt=""></a>
                 <br>
-                <button data-toggle="modal" data-target="#breadCrumbs">Info</button>
+                <button class="portfolio-button" data-toggle="modal" data-target="#breadCrumbs">Info</button>
               </div>
             </section>
           </div>
@@ -130,7 +135,9 @@
             <h4 class="modal-title">Eat-da-Burger</h4>
           </div>
           <div class="modal-body">
-            <p>Eat da burger is a project </p>
+            <p>Eat-da-burger is a burger logger built with MySQL, Express, Handlebars and ORM's. This
+              project follows the model, view, controller architecture.</p>
+              <a href="https://github.com/StephenDK/Eat-da-burger">https://github.com/StephenDK/Eat-da-burger</a>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -196,10 +203,13 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Eat-da-Burger</h4>
+                <h4 class="modal-title">Blender</h4>
               </div>
               <div class="modal-body">
-                <p>Eat da burger is a project </p>
+                <p>Blender is a social media site for people who enjoy video games and want to connect.
+                  This site was built with ruby on rails and incorporated the devise API for user authentication as well as
+                the strip API for monthly subscription payments. </p>
+                <a href="https://github.com/StephenDK/simplefunapp_saas">https://github.com/StephenDK/simplefunapp_saas</a>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -208,6 +218,53 @@
         
           </div>
         </div>
+
+        <div id="scraper" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Scraper</h4>
+                </div>
+                <div class="modal-body">
+                  <p>This web application lets users view and leave comments on the latest news. Using Cheerio
+                    it scrapes news articles from NY Times. It was built using Express, Express-handlebars, Mongo, Mongoose, and Request.
+                  </p>
+                    <a href="https://github.com/StephenDK/Mongo-Scraper">https://github.com/StephenDK/Mongo-Scraper</a>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
+          <div id="friendFinder" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+            
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Friend Finder</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>This web application is a compatibility-based friend finder website. This website will
+                      take results from user surveys and then compare their answers with those from other users. This app utilizes
+                      GET and POST routes to handle user dat plus JavaScript logic to handle matching users.
+                    </p>
+                      <a href="https://github.com/StephenDK/FriendFinder">https://github.com/StephenDK/FriendFinder</a>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+            
+              </div>
+            </div>
     
 
     <!-- jQuery CDN -->

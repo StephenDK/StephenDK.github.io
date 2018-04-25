@@ -268,7 +268,7 @@ html {
 
 #portfolio-area {
   /* Box-model */
-  height: 845px;
+  height: 870px;
   width: 95%;
   padding: 45px 10px 25px 31px;
 
@@ -284,8 +284,10 @@ html {
   margin-bottom: 40px;
 }
 .project-container {
+    border-width: 2px;
+    border-style: ridge;
     display: inline-block;
-
+    margin-bottom: 10px;
 }
 .sendRight {
     float: right;
@@ -300,8 +302,14 @@ html {
   /* Positioning */
   margin-bottom: 15px;
 }
-button {
+.portfolio-button {
   margin-bottom: 10px;
+  width: 80px;
+  background-color: lightgreen;
+  color: black;
+  border-radius: 4px;
+  margin-left: 87px;
+
 }
 
 /* --------END--------- */
