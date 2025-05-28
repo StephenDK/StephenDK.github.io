@@ -1,321 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Stephen Klein</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
-
-  </head>
-
-  <body id="page-top">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Stephen Klein</span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Stephen Klein's Full-Stack and UI/UX Portfolio">
+  <meta name="author" content="Stephen Klein">
+  <title>Stephen Klein</title>
+  <!-- Material UI CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.15.0/dist/css/mui.min.css">
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" rel="stylesheet">
+  <!-- Tailwind CSS for additional styling -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .mui-appbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1100;
+      background-color: #1976d2;
+      color: white;
+    }
+    .mui-drawer {
+      width: 240px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: white;
+      z-index: 1000;
+      padding: 16px;
+      display: none;
+    }
+    .mui-drawer.open {
+      display: block;
+    }
+    .mui-drawer.permanent {
+      display: none;
+    }
+    @media (min-width: 600px) {
+      .mui-drawer.permanent {
+        display: block;
+      }
+      .mui-hamburger {
+        display: none;
+      }
+    }
+    .mui-main {
+      margin-left: 0;
+      padding: 80px 16px 16px 16px;
+    }
+    @media (min-width: 600px) {
+      .mui-main {
+        margin-left: 240px;
+      }
+    }
+    .mui-card {
+      margin-bottom: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .mui-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .section {
+      display: none;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .slide-in-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .slide-in-right.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .icon-hover {
+      transition: transform 0.3s ease;
+    }
+    .icon-hover:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+    .mui-list-item {
+      cursor: pointer;
+      padding: 8px 16px;
+      color: #1976d2;
+    }
+    .mui-list-item:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <!-- App Bar -->
+  <div class="mui-appbar">
+    <div class="mui--text-headline p-4 flex items-center">
+      <button id="hamburger" class="mui-hamburger text-white mr-4 md:hidden">
+        <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+      <span>Stephen Klein</span>
+    </div>
+  </div>
+
+  <!-- Drawer -->
+  <div id="drawer" class="mui-drawer">
+    <div class="text-center p-4">
+      <div class="section">
+        <h6 class="mui--text-title mui--text-primary">Stephen Klein</h6>
+        <img src="img/profile.jpg" alt="Stephen Klein" class="rounded-full w-32 h-32 mx-auto my-4">
+      </div>
+      <div class="mui-divider"></div>
+      <div id="nav-list" class="my-2">
+        <div class="mui-list-item" data-section="about">About</div>
+        <div class="mui-list-item" data-section="experience">Experience</div>
+        <div class="mui-list-item" data-section="education">Education</div>
+        <div class="mui-list-item" data-section="skills">Skills</div>
+        <div class="mui-list-item" data-section="interests">Interests</div>
+        <div class="mui-list-item" data-section="awards">Applications</div>
+      </div>
+      <div class="mt-4">
+        <a href="https://www.linkedin.com/in/stephen-dklein/" target="_blank" class="mx-2 text-primary">
+          <i class="fab fa-linkedin-in fa-2x"></i>
+        </a>
+        <a href="https://github.com/StephenDK" target="_blank" class="mx-2 text-primary">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Permanent Drawer for Larger Screens -->
+  <div id="drawer-permanent" class="mui-drawer permanent">
+    <div class="text-center p-4">
+      <div class="section">
+        <h6 class="mui--text-title mui--text-primary">Stephen Klein</h6>
+        <img src="img/profile.jpg" alt="Stephen Klein" class="rounded-full w-32 h-32 mx-auto my-4">
+      </div>
+      <div class="mui-divider"></div>
+      <div id="nav-list-permanent" class="my-2">
+        <div class="mui-list-item" data-section="about">About</div>
+        <div class="mui-list-item" data-section="experience">Experience</div>
+        <div class="mui-list-item" data-section="education">Education</div>
+        <div class="mui-list-item" data-section="skills">Skills</div>
+        <div class="mui-list-item" data-section="interests">Interests</div>
+        <div class="mui-list-item" data-section="awards">Applications</div>
+      </div>
+      <div class="mt-4">
+        <a href="https://www.linkedin.com/in/stephen-dklein/" target="_blank" class="mx-2 text-primary">
+          <i class="fab fa-linkedin-in fa-2x"></i>
+        </a>
+        <a href="https://github.com/StephenDK" target="_blank" class="mx-2 text-primary">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="mui-main">
+    <div class="mui-container mui--text-center max-w-5xl mx-auto">
+      <!-- About Section -->
+      <section id="about" class="section py-8">
+        <h1 class="mui--text-display2 mui--text-primary">Stephen <span class="mui--text-secondary">Klein</span></h1>
+        <p class="mui--text-body1 my-4">(650) 995-4362 · <a href="mailto:stephendklein08@gmail.com">stephendklein08@gmail.com</a></p>
+        <p class="mui--text-body1 mb-8">
+          Passionate UI/UX developer with a strong foundation in web development (HTML, CSS, JavaScript) and 6+ years of IT experience enhancing user workflows. Skilled in designing intuitive, accessible interfaces, conducting usability testing, and collaborating with stakeholders to translate requirements into user-focused solutions. Leveraging a B.S. in Computer Science and full-stack expertise, I create seamless digital experiences that prioritize functionality and aesthetics.
+        </p>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section py-8">
+        <h2 class="mui--text-headline mb-8">Experience</h2>
+        <div class="mui-row">
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">Web Content Specialist</h3>
+                <div class="mui--text-subhead mui--text-light">Santa Clara County Registrar of Voters</div>
+                <div class="mui--text-caption mui--text-light">Aug 2019 - Present</div>
+                <p class="mui--text-body1 mt-4">
+                  I am a skilled web developer with a strong focus on user-centered design, having successfully designed and maintained accessible, user-friendly county websites using HTML, CSS, and JavaScript while ensuring WCAG 2.1 compliance. By improving information architecture and creating reusable templates, I reduced user navigation time by 25% and streamlined content updates across 10+ sub-sites. I collaborated with stakeholders to prototype solutions in Adobe XD and trained over 50 staff members, enhancing content management and workflow adoption.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">Application Support Specialist</h3>
+                <div class="mui--text-subhead mui--text-light">Santa Clara County Registrar of Voters</div>
+                <div class="mui--text-caption mui--text-light">Sept 2018 - May 2019</div>
+                <p class="mui--text-body1 mt-4">
+                  I am a proficient IT professional who enhanced user productivity by configuring and troubleshooting Microsoft 365 interfaces for over 2,000 employees while reducing ticket resolution time by 20% through streamlined workflows. Additionally, I implemented UI/UX best practices to improve interface design processes, driving efficiency and user satisfaction.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">Coding Instructor</h3>
+                <div class="mui--text-subhead mui--text-light">CodeRev</div>
+                <div class="mui--text-caption mui--text-light">June 2018 - Aug 2018</div>
+                <p class="mui--text-body1 mt-4">
+                  I am an experienced web development instructor who taught HTML, CSS, and JavaScript to over 20 students, guiding them in creating responsive, user-friendly websites. Through mentorship, I helped beginners grasp user-centered design principles, fostering their ability to develop intuitive and accessible web interfaces.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">Technology Services Technician</h3>
+                <div class="mui--text-subhead mui--text-light">De Anza Community College</div>
+                <div class="mui--text-caption mui--text-light">Sept 2016 - Aug 2017</div>
+                <p class="mui--text-body1 mt-4">
+                  I'm a skilled IT professional who has configured Microsoft 365 web applications, optimizing user interfaces for over 500 faculty and students. I specialize in debugging web systems, resolving usability issues to enhance access and functionality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education" class="section py-8">
+        <h2 class="mui--text-headline mb-8">Education</h2>
+        <div class="mui-row">
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">California State University East Bay</h3>
+                <div class="mui--text-subhead mui--text-light">Bachelor of Science Computer Science</div>
+                <div class="mui--text-caption mui--text-light">2024</div>
+              </div>
+            </div>
+          </div>
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">UC Berkeley</h3>
+                <div class="mui--text-subhead mui--text-light">Full Stack Web Developer Certificate</div>
+                <div class="mui--text-caption mui--text-light">2018</div>
+              </div>
+            </div>
+          </div>
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">Cisco Certified Network Associate (CCNA)</h3>
+                <div class="mui--text-subhead mui--text-light">California State University, East Bay – Hayward, CA</div>
+                <div class="mui--text-caption mui--text-light">2023</div>
+              </div>
+            </div>
+          </div>
+          <div class="mui-col-md-12">
+            <div class="mui-card">
+              <div class="mui-card-content">
+                <h3 class="mui--text-title">De Anza Community College</h3>
+                <div class="mui--text-subhead mui--text-light">Liberal Arts: Math, Science, Engineering Emphasis</div>
+                <div class="mui--text-caption mui--text-light">2014</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="section py-8">
+        <h2 class="mui--text-headline mb-8">Skills</h2>
+        <div class="mui--text-subhead mui--text-light">Programming Languages & Tools</div>
+        <div class="mui-row mb-6">
+          <div class="mui-col-md-12 flex flex-wrap">
+            <i class="fab fa-html5 fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-css3-alt fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-js-square fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-react fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-node-js fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-sass fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-less fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fas fa-database fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-github fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-linux fa-3x mui--text-primary icon-hover m-2"></i>
+            <i class="fab fa-npm fa-3x mui--text-primary icon-hover m-2"></i>
+          </div>
+        </div>
+        <div class="mui--text-subhead mui--text-light">Workflow</div>
+        <ul class="mui-list--unstyled">
+          <li class="my-2"><i class="fa fa-check mui--text-primary mr-2"></i>Mobile-First, Responsive Design</li>
+          <li class="my-2"><i class="fa fa-check mui--text-primary mr-2"></i>Cross Browser Testing & Debugging</li>
+          <li class="my-2"><i class="fa fa-check mui--text-primary mr-2"></i>Cross Functional Teams</li>
+          <li class="my-2"><i class="fa fa-check mui--text-primary mr-2"></i>Agile Development & Scrum</li>
+        </ul>
+      </section>
+
+      <!-- Interests Section -->
+      <section id="interests" class="section py-8">
+        <h2 class="mui--text-headline mb-8">Interests</h2>
+        <p class="mui--text-body1 mb-4">
+          I am a passionate and versatile professional with a strong background in software engineering, holding a B.S. in Computer Science and over six years of IT experience. My expertise lies in full-stack web development, utilizing technologies such as HTML, CSS, JavaScript, and frameworks like React Native, with a keen eye for designing intuitive, user-focused interfaces. I thrive in collaborative environments, valuing well-structured code, continuous learning, and mentoring others to foster team growth. My professional journey includes designing accessible county websites, optimizing user experiences, and implementing efficient workflows, such as reducing navigation time by 25% and configuring Microsoft 365 for over 2,000 employees.
+        </p>
+        <p class="mui--text-body1 mb-4">
+          Beyond my technical pursuits, I am an enthusiastic individual with diverse interests that enrich my perspective and drive. An avid outdoorsman, I find inspiration in nature through activities like camping and hiking, which fuel my creativity and problem-solving skills. My love for travel and exploration complements my curiosity, leading me to embrace new cultures and culinary experiences at restaurants worldwide. A dedicated food enthusiast, I enjoy both cooking and dining out, appreciating the artistry of diverse cuisines.
+        </p>
+        <p class="mui--text-body1 mb-4">
+          My passion for video games, rooted in childhood connections through gaming, aligns with my technical interests, inspiring me to create impactful digital experiences. Family and friends are at the core of my values, grounding me and motivating my commitment to building meaningful relationships and community-focused solutions. My zeal for learning extends across disciplines, from mastering new coding frameworks to staying updated on emerging technologies, ensuring I remain adaptable in a fast-evolving industry. Whether working remotely, in a hybrid setup, or in-person, I bring energy, dedication, and a collaborative spirit to every endeavor, aiming to develop innovative systems that connect and empower millions of users.
+        </p>
+        <p class="mui--text-body1">
+          When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.
+        </p>
+      </section>
+
+      <!-- Applications Section -->
+      <section id="awards" class="section py-8">
+        <h2 class="mui--text-headline mb-8">Applications</h2>
+        <ul class="mui-list--unstyled">
+          <li class="my-4">
+            <i class="fa fa-trophy mui--text-warning mr-2"></i>
+            <a href="https://trackerapp-clone.onrender.com/" target="_blank" class="mui--text-body1">Equipment Tracking Application</a>
+            <ul class="mui-list--unstyled ml-6">
+              <li class="mui--text-body2">Test Email: test@user.com</li>
+              <li class="mui--text-body2">Test Password: Welcome1234</li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          <li class="my-4">
+            <i class="fa fa-trophy mui--text-warning mr-2"></i>
+            <a href="https://github.com/StephenDK/customer-feedback-app" target="_blank" class="mui--text-body1">CustomerServer</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          <li class="my-4">
+            <i class="fa fa-trophy mui--text-warning mr-2"></i>
+            <a href="https://github.com/StephenDK/voluntier" target="_blank" class="mui--text-body1">VolunTier</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          <li class="my-4">
+            <i class="fa fa-trophy mui--text-warning mr-2"></i>
+            <a href="https://github.com/StephenDK/Mongo-Scraper" target="_blank" class="mui--text-body1">Mongo-Scraper</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Applications</a>
+          <li class="my-4">
+            <i class="fa fa-trophy mui--text-warning mr-2"></i>
+            <a href="https://github.com/StephenDK/React-Clicky-Game" target="_blank" class="mui--text-body1">React Memory Game</a>
           </li>
         </ul>
-      </div>
-    </nav>
-
-    <div class="container-fluid p-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Stephen
-            <span class="text-primary">Klein</span>
-          </h1>
-          <div class="subheading mb-5">(650) 995-4362 ·
-            <a href="mailto:name@email.com">stephendklein08@gmail.com</a>
-          </div>
-          <p class="lead mb-5">Passionate UI/UX developer with a strong foundation in web development (HTML, CSS, JavaScript) and 6+ years of IT experience enhancing user workflows. Skilled in designing intuitive, accessible interfaces, conducting usability testing, and collaborating with stakeholders to translate requirements into user-focused solutions. Leveraging a B.S. in Computer Science and full-stack expertise, I create seamless digital experiences that prioritize functionality and aesthetics.</p>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/stephen-dklein/">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/StephenDK">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
       </section>
-
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-           <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Content Specialist</h3>
-              <div class="subheading mb-3">Santa Clara County Registrar of Voters</div>
-              <p>I am a skilled web developer with a strong focus on user-centered design, having successfully designed and maintained accessible, user-friendly county websites using HTML, CSS, and JavaScript while ensuring WCAG 2.1 compliance. By improving information architecture and creating reusable templates, I reduced user navigation time by 25% and streamlined content updates across 10+ sub-sites. I collaborated with stakeholders to prototype solutions in Adobe XD and trained over 50 staff members, enhancing content management and workflow adoption.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Aug 2019 - Present</span>
-            </div>
-          </div>
-          
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Application Support Specialist</h3>
-              <div class="subheading mb-3">Santa Clara County Registrar of Voters</div>
-              <p>
-                I am a proficient IT professional who enhanced user productivity by configuring and troubleshooting Microsoft 365 interfaces for over 2,000 employees while reducing ticket resolution time by 20% through streamlined workflows. Additionally, I implemented UI/UX best practices to improve interface design processes, driving efficiency and user satisfaction.
-                  </p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Sept 2018 - May 2019</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Coding Instructor</h3>
-              <div class="subheading mb-3">CodeRev</div>
-              <p>
-                I am an experienced web development instructor who taught HTML, CSS, and JavaScript to over 20 students, guiding them in creating responsive, user-friendly websites. Through mentorship, I helped beginners grasp user-centered design principles, fostering their ability to develop intuitive and accessible web interfaces.
-                  </p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">June 2018 - Aug 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Technology Services Technician</h3>
-              <div class="subheading mb-3">De Anza Community College</div>
-              <p> 
-              I'm a skilled IT professional who has configured Microsoft 365 web applications, optimizing user interfaces for over 500 faculty and students. I specialize in debugging web systems, resolving usability issues to enhance access and functionality.
-              </p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">Sept 2016 - Aug 2017</span>
-            </div>
-          </div>
-
-          
-      </section>
-
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-        <div class="my-auto">
-          <h2 class="mb-5">Education</h2>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">California State University East Bay</h3>
-              <div class="subheading mb-3">Bachelor of Science Computer Science</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">2024</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">UC Berkeley</h3>
-              <div class="subheading mb-3">Full Stack Web Developer Certificate</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-              <div class="resume-content mr-auto">
-                <h3 class="mb-0">Cisco Certified Network Associate (CCNA)</h3>
-                <div class="subheading mb-3">California State University, East Bay – Hayward, CA</div>
-              </div>
-              <div class="resume-date text-md-right">
-                <span class="text-primary">2023</span>
-              </div>
-            </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">De Anza Community College</h3>
-              <div class="subheading mb-3">Liberal Arts: Math, Science, Engineering Ephasis</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">2014</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-        <div class="my-auto">
-          <h2 class="mb-5">Skills</h2>
-
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline dev-icons">
-            <li class="list-inline-item">
-              <i class="fab fa-html5"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-css3-alt"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-js-square"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-react"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-node-js"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-sass"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-less"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fas fa-database"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-github"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-linux"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-npm"></i>
-            </li>
-          </ul>
-
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
-        </div>
-      </section>
-
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-        <div class="my-auto">
-          <h2 class="mb-5">Interests</h2>
-          <p>
-            I am a passionate and versatile professional with a strong background in software engineering, holding a B.S. in Computer Science and over six years of IT experience. 
-            My expertise lies in full-stack web development, utilizing technologies such as HTML, CSS, JavaScript, and frameworks like React Native, with a keen eye for designing intuitive, user-focused interfaces. 
-            I thrive in collaborative environments, valuing well-structured code, continuous learning, and mentoring others to foster team growth. 
-            My professional journey includes designing accessible county websites, optimizing user experiences, and implementing efficient workflows, such as reducing navigation time by 25% and configuring Microsoft 365 for over 2,000 employees.
-          </p>
-    <p>Beyond my technical pursuits, I am an enthusiastic individual with diverse interests that enrich my perspective and drive. An avid outdoorsman, I find inspiration in nature through activities like camping and hiking, which fuel my creativity and problem-solving skills. 
-    My love for travel and exploration complements my curiosity, leading me to embrace new cultures and culinary experiences at restaurants worldwide. A dedicated food enthusiast, I enjoy both cooking and dining out, appreciating the artistry of diverse cuisines.</p>
-  
-  <p>My passion for video games, rooted in childhood connections through gaming, aligns with my technical interests, inspiring me to create impactful digital experiences.
-
-        Family and friends are at the core of my values, grounding me and motivating my commitment to building meaningful relationships and community-focused solutions. 
-        My zeal for learning extends across disciplines, from mastering new coding frameworks to staying updated on emerging technologies, ensuring I remain adaptable in a fast-evolving industry. 
-        Whether working remotely, in a hybrid setup, or in-person, I bring energy, dedication, and a collaborative spirit to every endeavor, aiming to develop innovative systems that connect and empower millions of users.
-          
-          </p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-        </div>
-      </section>
-
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Apps</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              <a href='https://trackerapp-clone.onrender.com/'>Equipment Tracking Application</a></li>
-              <ul>
-              <li><strong>Test Email:</strong> test@user.com</li>
-              <li><strong>Test Password:</strong> Welcome1234</li>
-              </ul>
-            <li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              <a href='https://github.com/StephenDK/customer-feedback-app'>CustomerServer</a></li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              <a href='https://github.com/StephenDK/voluntier'>VolunTier</a></li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              <a href='https://github.com/StephenDK/Mongo-Scraper'>Mongo-Scraper</a></li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              <a href='https://github.com/StephenDK/React-Clicky-Game'>React Memory Game</a></li>
-          </ul>
-        </div>
-      </section>
-
     </div>
+  </main>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Drawer Toggle
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('drawer');
+    hamburger.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+    });
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    // Section Navigation
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('.mui-list-item');
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+    function showSection(sectionId) {
+      sections.forEach(section => {
+        if (section.id === sectionId) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+      drawer.classList.remove('open');
+    }
 
-  </body>
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const sectionId = item.getAttribute('data-section');
+        showSection(sectionId);
+      });
+    });
 
+    // Show About section by default on load
+    window.addEventListener('load', () => {
+      showSection('about');
+    });
+  </script>
+</body>
 </html>
